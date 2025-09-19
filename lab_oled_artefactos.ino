@@ -61,6 +61,8 @@ void loop() {
     //Para imprimir otro dato, se coloca nuevamente el cursor bajando la columna
     display.setCursor(20, 11);
     display.println(tempC);
+    display.setCursor(50, 11);
+    display.print(" C");
     //Para guardar los cambios hechos en la pantalla
     display.display();
     
