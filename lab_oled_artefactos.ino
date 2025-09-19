@@ -49,24 +49,24 @@ void loop() {
     Serial.print("Temperatura: ");
     Serial.print(tempC, 2);   // 2 decimales
     Serial.println(" °C");
+
+    //set text size, 1 es 8px, 2 es 16px, 3, es 32px, etc.
+    display.setTextSize(1); 
+    //Set text color define el color del texto de la pantalla
+    display.setTextColor(SH110X_WHITE); 
+    //Set cursor coloca el cursor en donde se va a comenzar escribir (px ancho, px alto)
+    display.setCursor(20, 0);
+    //Println permite escribir en la posicion en la que se encuentra el cursor
+    display.println("Temperatura");
+    //Para imprimir otro dato, se coloca nuevamente el cursor bajando la columna
+    display.setCursor(20, 11);
+    display.println(tempC);
+    //Para guardar los cambios hechos en la pantalla
+    display.display();
+    
+    //Se borra la pantalla antes de finalizar el loop para que no se monten los datos
+    display.clearDisplay();
   }
 
-  //set text size, 1 es 8px, 2 es 16px, 3, es 32px, etc.
-  display.setTextSize(1); 
-  //Set text color define el color del texto de la pantalla
-  display.setTextColor(SH110X_WHITE); 
-  //Set cursor coloca el cursor en donde se va a comenzar escribir (px ancho, px alto)
-  display.setCursor(20, 0);
-  //Println permite escribir en la posicion en la que se encuentra el cursor
-  display.println("Temperatura");
 
-  //Para imprimir otro dato, se coloca nuevamente el cursor bajando la columna
-  display.setCursor(20, 11);
-  display.println(tempC);
-
-  //Para guardar los cambios hechos en la pantalla
-  display.display();
-  
-  //Se borra la pantalla antes de finalizar el loop para que no se monten los datos
-  display.clearDisplay();
 }
